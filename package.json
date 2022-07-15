@@ -1,0 +1,34 @@
+{
+  "name": "verificate",
+  "version": "1.0.0",
+  "description": "be well verified in the ecosystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EnebeliEmmanuel/Verificate.git"
+  },
+  "author": "koko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EnebeliEmmanuel/Verificate/issues"
+  },
+  "homepage": "https://github.com/EnebeliEmmanuel/Verificate#readme",
+  "dependencies": {
+    "@chakra-ui/react": "^2.2.4",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "framer-motion": "^6.5.0",
+    "parcel": "^2.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
+}
