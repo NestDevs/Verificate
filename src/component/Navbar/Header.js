@@ -12,10 +12,9 @@ import {AiOutlinePlus } from "react-icons/ai";
 
 const Header = () => {
   return (
-    <Flex m="30px auto" ml="50px" pb="8"  borderBottom="5px solid rgba(0, 0, 0, 0.1)">
-      <Flex pos="relative"  alignItems="flex-end">
-       <Image h="200px" w="200px" src={prof} alt="professor"/>
-       
+    <Flex m="30px auto"  pb="8"  borderBottom="5px solid rgba(0, 0, 0, 0.1)">
+      <Flex pos="relative" >
+       <Image h="150px" w="150px" src={prof} alt="professor"/>
        <Button
           _hover={{
             bg: "red",
@@ -28,32 +27,37 @@ const Header = () => {
           fontWeight="700"
           borderRadius="47px"
           width="130px"
-         bottom="120px"
-         left="160px"
+         bottom="90px"
+         left="120px"
            pos="absolute"
         >
           intermediate
         </Button>
-        
-        
-  
-      
-      
-        <Box>
-          <Flex flexDirection="column" ml="40px">
-          <Text color="#03064A;" fontWeight="700" fontSize="36px">
-         AFOLABI JIDE
+      </Flex>
+      <Flex alignItems="flex-end">
+        <Flex  flexDirection="column" ml="40px">
+          <Text color="#03064A;" fontWeight="600" fontSize="34px">
+            AFOLABI JIDE
           </Text>
-          <Text fontSize="20px" lineHeight="30px"   h="30px" color="rgba(0, 0, 0, 0.5);" fontWeight="600" >
-          afolabijide@gmail.com
+          <Text fontSize="20px" fontWeight="500" lineHeight="20px"   color="rgba(0, 0, 0, 0.5);"  >
+            afolabijide@gmail.com
           </Text>
-          </Flex>
-          
-         
-        
-        </Box>
-
-        <Box ml="70px">
+        </Flex>
+        <Flex  flexDirection="column" ml="40px">
+          <Text color="#03064A;" fontWeight="600" fontSize="34px">
+            Skill 
+            <span style={{
+              color:"#E70909",
+              marginLeft:"15px",
+              
+            }}>+</span>
+          </Text>
+          <Text fontSize="20px" lineHeight="20px" fontWeight="500"   color="rgba(0, 0, 0, 0.5);" >
+            python
+          </Text>
+        </Flex>
+      </Flex>
+        {/* <Box ml="70px">
           <Flex flexDirection="column">
             <Flex>
             <Text color="#03064A;" fontWeight="700" mr="4px" fontSize="36px">Skill</Text>
@@ -67,10 +71,10 @@ const Header = () => {
 
           </Flex>
           
-        </Box>
+        </Box> */}
         
     </Flex>
-    </Flex>
+    
   )
 }
 
