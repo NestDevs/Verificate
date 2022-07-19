@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Button, Flex, Image, Stack } from "@chakra-ui/react";
+
 import { Link } from "react-router-dom";
 
 import logo from "../../asset/image/logo.png";
@@ -32,7 +33,6 @@ const Navbar = () => {
         right="60px"
         display={{ base: "none", md: "block" }}
       />
-
       {/*Nav links*/}
       <Flex
         alignItems="center"
