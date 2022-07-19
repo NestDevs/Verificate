@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier \"src/**/*.{js,html}\" --write",
+    "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
+    "watch": "parcel ./src/index.html",
     "start": "parcel ./src/index.html",
     "build": "parcel build ./src/index.html"
   },
