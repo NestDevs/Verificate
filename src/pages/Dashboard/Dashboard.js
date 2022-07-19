@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import {
     Box,
     Button,
@@ -28,7 +29,7 @@ const Body = () => {
           <Text mt="8" color="#03064A" fontWeight="600" lineHeight="48px" fontSize="32px">
             Test your python skill
           </Text>
-          <Text  m="10px auto" w="590px"  fontWeight="500" lineHeight="30px" fontSize="24px" color="rgba(0, 0, 0, 0.6)" >
+          <Text  m="10px auto" w={{base:"90%", md:"420px", lg:"80%"}}  fontWeight="500" lineHeight="30px" fontSize="24px" color="rgba(0, 0, 0, 0.6)" >
             This test has been Examined by experts and each level 
             of expertise has been given appropriate questions 
             to suit your level.
@@ -49,7 +50,11 @@ const Body = () => {
         m="30px auto"
     colorScheme="#03064A"
         >
-          Take Test
+          <Link to="/payment" 
+            >
+            Take Test
+             
+            </Link>
         </Button>
           </Flex>
      </GridItem>

@@ -14,15 +14,16 @@ import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Sidebar from "./component/Sidebar";
 import Header from "./component/Navbar/Header";
-import { Completed } from "./pages/Test/Completed/completed";
-import { Newtest } from "./pages/Test/New/Newtest";
+import { Newtest } from "./pages/Test/New";
 import { Certificates } from "./pages/certificate/Certificates";
+import { Completed } from "./pages/Test/Completed/Index";
+import { Payment } from "./pages/Test/payment";
 
 function App() {
 return(
   <Router>
     <Grid h='100vh' templateRows='repeat(4, 1fr)' templateColumns='repeat(5, 1fr)' gap={6}>
-      <GridItem w="300px" rowSpan={4} colSpan={1} bg='#03064A' >
+      <GridItem w={{base:"60px", md:"200px", lg:"300px"}} rowSpan={4} colSpan={1} bg='#03064A' >
         <Sidebar/>
       </GridItem>
       <GridItem  colSpan={4} rowSpan={1} bg='white' >
@@ -35,6 +36,7 @@ return(
           <Route exact path="/test/completed" element={<Completed/>}></Route> 
           <Route exact path="/test/newtest" element={<Newtest/>}></Route> 
           <Route exact path="/certificate" element={<Certificates/>}></Route> 
+          <Route exact path="/payment" element={<Payment/>}></Route> 
         </Routes>
       </GridItem>
     
