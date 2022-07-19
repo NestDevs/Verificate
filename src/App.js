@@ -1,4 +1,5 @@
-import React , { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Box,
@@ -11,17 +12,12 @@ import {
 } from "@chakra-ui/react";
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import Sidebar from "./component/Sidebar";
-import Header from "./component/Navbar/Header";
-import { Newtest } from "./pages/Test/New";
-import { Certificates } from "./pages/certificate/Certificates";
-import { Completed } from "./pages/Test/Completed/Index";
-import { Payment } from "./pages/Test/payment";
+import Signup from "./component/Signup";
 
 function App() {
-return(
-  <Router>
-    <Grid h='100vh' templateRows='repeat(4, 1fr)' templateColumns='repeat(5, 1fr)' gap={6}>
+  return (
+    <Router>
+      <Grid h='100vh' templateRows='repeat(4, 1fr)' templateColumns='repeat(5, 1fr)' gap={6}>
       <GridItem w={{base:"60px", md:"200px", lg:"300px"}} rowSpan={4} colSpan={1} bg='#03064A' >
         <Sidebar/>
       </GridItem>
@@ -29,21 +25,22 @@ return(
         <Header/>
       </GridItem>
       <GridItem colSpan={4} rowSpan={1} bg='white' >
-        <Routes>
-          <Route path="*" element={<Home/>}></Route>
+      <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/dashboard" element={<Dashboard />}></Route>
           <Route exact path="/dashboard" element={<Dashboard/>}></Route> 
           <Route exact path="/test/completed" element={<Completed/>}></Route> 
           <Route exact path="/test/newtest" element={<Newtest/>}></Route> 
           <Route exact path="/certificate" element={<Certificates/>}></Route> 
           <Route exact path="/payment" element={<Payment/>}></Route> 
-        </Routes>
+      </Routes>
       </GridItem>
     
     </Grid>
-    {/* </Routes> */}
-  </Router>
-    
-)
+    </Router>
+   
+  );
 }
 
 export default App;
