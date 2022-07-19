@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/EnebeliEmmanuel/Verificate#readme",
   "dependencies": {
+    "@chakra-ui/hooks": "^2.0.4",
+    "@chakra-ui/icons": "^2.0.4",
     "@chakra-ui/react": "^2.2.4",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "formik": "^2.2.9",
     "framer-motion": "^6.5.0",
     "parcel": "^2.6.2",
     "react": "^18.2.0",
