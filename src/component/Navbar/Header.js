@@ -27,8 +27,8 @@ const Header = () => {
           fontWeight="700"
           borderRadius="47px"
           width="130px"
-         bottom="90px"
-         left="120px"
+         bottom="625px"
+         left="465px"
            pos="absolute"
         >
           intermediate
