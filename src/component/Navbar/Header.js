@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import {
   Box,
   Button,
@@ -9,8 +9,11 @@ import {
 } from "@chakra-ui/react";
 import prof from "../../asset/image/proffessor.png"
 import {AiOutlinePlus } from "react-icons/ai";
+import AppContext from "../../contexts/AppContext";
 
 const Header = () => {
+  const { user } = useContext(AppContext);
+console.log(user)
   return (
     <Flex  mx="auto" mb="30px"  mt="60px" pb="8"  borderBottom="5px solid rgba(0, 0, 0, 0.1)">
       <Flex pos="relative" >
@@ -39,10 +42,10 @@ const Header = () => {
       <Flex alignItems="flex-end">
         <Flex  flexDirection="column" ml={{base:"20px", md:"40px"}}>
           <Text color="#03064A;" fontWeight="600" fontSize={{base:"28px", md:"34px"}}>
-            AFOLABI JIDE
+            {user.first_name}   {user.last_name}
           </Text>
           <Text fontSize={{base:"18px", md:"20px"}} fontWeight="500" lineHeight="20px"   color="rgba(0, 0, 0, 0.5);"  >
-            afolabijide@gmail.com
+            {user.email}
           </Text>
         </Flex>
         <Flex  flexDirection="column"  ml={{base:"20px", md:"40px"}}>

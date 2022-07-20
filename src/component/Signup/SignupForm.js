@@ -19,12 +19,14 @@ import {
 } from "@chakra-ui/react";
 
 import { Link as RouteLink } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import useForm from "./useForm";
 import { validateSignupInfo } from "./validateForm";
 import Modal from "../Modal";
-
+import AppContext from "../../contexts/AppContext";
+import { signUp } from "../../api/calls";
+import {Routes, Route, useNavigate} from 'react-router-dom';
 export default function SignupForm({ setUserEmail, modalMethod }) {
   const initialState = {
     email: "",
@@ -32,20 +34,24 @@ export default function SignupForm({ setUserEmail, modalMethod }) {
     skill: "",
     level: "",
   };
+  const { user, setUser } = useContext(AppContext);
 
   const { onChange, values, setValues } = useForm(initialState);
   const [error, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const { email, password, skill, level } = values;
+  const { email, password, first_name, last_name, skill, level } = values;
+
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+  const handleSubmit =async (e) => {
     e.preventDefault();
     console.log("Working");
-    const values = { email, password, skill, level };
-    setErrors(validateSignupInfo(values));
+    const values = { email, first_name, last_name, password, skill, level };
+    console.log(values)
+   
+    // setErrors(validateSignupInfo(values));
     console.log(error);
     if (Object.entries(error).length > 0) {
       console.log(error);
@@ -56,7 +62,25 @@ export default function SignupForm({ setUserEmail, modalMethod }) {
       setIsSubmitted(true);
       setUserEmail(email);
       setValues(initialState);
-      modalMethod();
+      const data = { ...values, 
+        linked_in:"https://www.linkedin.com/in/abdullah-ajibade-678590173/"
+      }
+    const signUpResponse  = await signUp(data)
+    console.log(signUpResponse)
+    if(!signUpResponse.status){
+      setErrors({
+        email:signUpResponse.error
+      })
+    }else{
+      const { access_token}=  signUpResponse
+
+localStorage.setItem("token", access_token)
+navigate('/signIn');
+    }
+
+  
+
+      // modalMethod();
     }
   };
 
@@ -120,9 +144,40 @@ export default function SignupForm({ setUserEmail, modalMethod }) {
                 <FormErrorMessage>{error.password}</FormErrorMessage>
               )}
             </FormControl>
+            <FormControl id="first_name" isRequired isInvalid={error.first_name}>
+              <FormLabel>First Name</FormLabel>
+              <InputGroup>
+                <Input
+                type="text"
+                  name="first_name"
+                  value={first_name}
+                  onChange={onChange}
+                />
+               
+              </InputGroup>
+              {error.first_name && (
+                <FormErrorMessage>{error.first_name}</FormErrorMessage>
+              )}
+            </FormControl>
+
+            <FormControl id="first_name" isRequired isInvalid={error.last_name}>
+              <FormLabel>Last Name</FormLabel>
+              <InputGroup>
+                <Input
+                type="text"
+                  name="last_name"
+                  value={last_name}
+                  onChange={onChange}
+                />
+               
+              </InputGroup>
+              {error.last_name && (
+                <FormErrorMessage>{error.last_name}</FormErrorMessage>
+              )}
+            </FormControl>
             <HStack>
               <Box w="50%">
-                <FormControl id="skill" isRequired isInvalid={error.skill}>
+                {/* <FormControl id="skill" isRequired isInvalid={error.skill}>
                   <FormLabel>Skill</FormLabel>
                   <Select
                     placeholder="Python"
@@ -141,10 +196,10 @@ export default function SignupForm({ setUserEmail, modalMethod }) {
                   {error.skill && (
                     <FormErrorMessage>{error.skill}</FormErrorMessage>
                   )}
-                </FormControl>
+                </FormControl> */}
               </Box>
               <Box w="50%">
-                <FormControl id="level" isRequired isInvalid={error.level}>
+                {/* <FormControl id="level" isRequired isInvalid={error.level}>
                   <FormLabel>Level</FormLabel>
                   <Select
                     placeholder="Beginner"
@@ -161,7 +216,7 @@ export default function SignupForm({ setUserEmail, modalMethod }) {
                   {error.level && (
                     <FormErrorMessage>{error.level}</FormErrorMessage>
                   )}
-                </FormControl>
+                </FormControl> */}
               </Box>
             </HStack>
             <Center spacing={10} pt={2}>

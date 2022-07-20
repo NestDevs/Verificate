@@ -13,7 +13,12 @@ import {
    Input ,
    Stack
   } from "@chakra-ui/react";
+// import { useWeb3 } from '../../../'
+import { useWeb3 } from '../../../hooks/Web3Client.hook'
+
 export const Payment = () => {
+  const { address } = useWeb3()
+
   return (
     <Box w="100%" >
     <Flex mx="auto" mb="40px" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" w={{base:"90%", md:"80%", lg:"70%"}} textAlign="center" flexDirection="column">
@@ -24,12 +29,19 @@ export const Payment = () => {
       <Stack  spacing={12}>
    <Text>Verificate Wallet Address</Text>
     <InputGroup>
-  <Input mx="auto" w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"  placeholder='fgWMht13467NJGF4568' />
-  <InputRightElement mr={{base:"85px", md:"150px"}} children="copy" />
+  {/* <Input mx="auto" w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" 
+  placeholder={address} /> */}
+  <InputRightElement mr={{base:"85px", md:"150px"}} children="copy  address" />
+  {/* <Center> */}
+
+  <Text ml={"14%"} boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" center >{address}</Text>
+  {/* </Center> */}
+
    </InputGroup>
   <InputGroup>
     
-    <Input mx="auto"  w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" placeholder='Reciepient Address' />
+    <Input mx="auto"  w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" 
+    placeholder='Reciepient Address' />
     <InputRightElement mr={{base:"85px", md:"150px"}} children="Paste" />
   </InputGroup>
   <InputGroup>

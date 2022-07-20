@@ -13,6 +13,7 @@ import {
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Signup from "./component/Signup";
+import Signin from "./component/Signin";
 import { Completed } from "./pages/Test/Completed/Completed";
 import { Newtest } from "./pages/Test/New/Newtest";
 import { Web3ReactProvider } from '@web3-react/core'
@@ -25,6 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/signin" element={<Signin />}></Route>
         <Route path="/dashboard/*" element={<Dashboard />}/>
       </Routes>
     </Router>

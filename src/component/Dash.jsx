@@ -5,14 +5,19 @@ import {
     Flex, 
     Button,
   } from "@chakra-ui/react";
-import React from 'react'
-import React from 'react'
+import React , { useContext } from 'react'
 import { Link } from "react-router-dom";
 import { useWeb3React } from '@web3-react/core'
 import {  Web3Address } from '../component/Web3Address'
 import {Web3Button} from '../component/Web3Button'
 import { AiOutlineCheckCircle } from "react-icons/ai";
+import AppContext from "../contexts/AppContext";
+
+
 export const Dash = () => {
+  const { user } = useContext(AppContext);
+  console.log({user})
+
   return (
     <Box >
     <Flex m="0 auto" w="80%"  borderRadius="3px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" textAlign="center" flexDirection="column">
