@@ -15,6 +15,7 @@ import {
   } from "@chakra-ui/react";
 // import { useWeb3 } from '../../../'
 import { useWeb3 } from '../../../hooks/Web3Client.hook'
+import { Link, useNavigate} from 'react-router-dom';
 
 export const Payment = () => {
   const { address } = useWeb3()
@@ -58,7 +59,11 @@ export const Payment = () => {
         opacity: "0.9",
       }}
       >
-    Pay Now
+     <Link to="/dashboard/info" 
+        >
+        Pay Now
+        
+        </Link>
    </Button>
       </Center>
       
