@@ -29,7 +29,7 @@ export const Payment = () => {
    </InputGroup>
   <InputGroup>
     
-    <Input mx="auto" h="23%" w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" placeholder='Reciepient Address' />
+    <Input mx="auto"  w="75%" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" placeholder='Reciepient Address' />
     <InputRightElement mr={{base:"85px", md:"150px"}} children="Paste" />
   </InputGroup>
   <InputGroup>
