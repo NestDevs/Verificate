@@ -48,8 +48,8 @@ export const Dash = () => {
         </Link>
       </Button>
     </Flex>
- <Flex   h="fit-content" m="0 auto"  w="80%" mt="50px" flexDirection={{base:"column", md:"row"}} align="center">
-    <Flex mb="50px" h="200px" w={{base:"80%", md:"23%"}} mx="auto" p="10px 10px" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" flexDirection="column" justifyContent="center">
+ <Flex   h="fit-content" m="0 auto"  w="80%" mt="50px"  flexDirection={{base:"column", md:"row"}} align="center">
+    <Flex  mb="50px" h="200px" w={{base:"80%", md:"33%"}} mx="auto" p="10px 10px" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" flexDirection="column" justifyContent="center">
         <Text m="0 auto" color="#03064A" fontSize="24px" fontWeight="650">Recent Activities</Text>
         <Flex color="#03064A" fontWeight="700" fontSize="20px" m="0 auto" align="center">
           <Icon as={AiOutlineCheckCircle}/>&nbsp;
@@ -59,8 +59,8 @@ export const Dash = () => {
         <Text pl="22px" m="0 auto" fontWeight="600" color="rgba(3, 6, 74, 0.6)">Date:30/06/2022</Text>
         <Text pr="4px" m="0 auto" fontWeight="600" color="rgba(3, 6, 74, 0.6)">Time:2:52pm</Text>
      </Flex>
-       <Flex mb="50px" h="200px" w={{base:"80%", md:"23%"}} mx="auto"  borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"   flexDirection="column" color="#03064A" fontWeight="700" fontSize="20px"  align="center">
-          <Box m="auto" >
+       <Flex mb="50px" h="200px" w={{base:"80%", md:"33%"}} mx="auto"  borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"   flexDirection="column" color="#03064A" fontWeight="700" fontSize="20px"  align="center">
+          <Box m="auto">
           <Flex   align="center">
             <Icon as={AiOutlineCheckCircle}/>&nbsp;
             Profile Setup
@@ -68,7 +68,7 @@ export const Dash = () => {
           <Text fontSize="20px" pl="30px" fontWeight="610" color="rgba(3, 6, 74, 0.6)">100% complete</Text>
           </Box>
         </Flex>
-        <Flex p="10px" mb="100px" h="200px" w={{base:"80%", md:"23%"}} mx="auto" fontSize="20px"  bg="#03064A"   borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"  flexDirection="column" color="#03064A" fontWeight="700">
+        <Flex p="10px" mb={{base:"100px", md:"50px"}} h="200px" w={{base:"80%", md:"33%"}} mx="auto" fontSize="20px"  bg="#03064A"   borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"  flexDirection="column" color="#03064A" fontWeight="700">
         <Flex w="80%" m="0 auto" align="center" color="white">
           <Text textAlign="center"  m="10px auto" fontSize="20px"   fontWeight="650" lineHeight="30px">
           Connect your wallet before taking test
