@@ -13,10 +13,11 @@ import {
 import Home from "./pages/Home/Home";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Signup from "./component/Signup";
-import { Completed } from "./pages/Test/Completed/Index";
-import { Newtest } from "./pages/Test/New";
+import { Completed } from "./pages/Test/Completed/Completed";
+import { Newtest } from "./pages/Test/New/Newtest";
 import { Web3ReactProvider } from '@web3-react/core'
 import { Web3Provider } from '@ethersproject/providers'
+import { Dash } from "./component/Dash";
 
 function App() {
   return (
@@ -24,11 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route  path="/completed" element={<Completed/>}></Route> 
-        <Route  path="/newtest" element={<Newtest/>}></Route> 
-        {/* <Route  path="/dashboard/certificate" element={<Certificates/>}></Route> 
-        <Route  path="/dashboard/payment" element={<Payment/>}></Route>  */}
+        <Route path="/dashboard/*" element={<Dashboard />}/>
       </Routes>
     </Router>
   );

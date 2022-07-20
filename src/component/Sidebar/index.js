@@ -30,7 +30,7 @@ const Sidebar = () => {
         </Box>
         <Box m="10px auto" w="100%">
         <Flex  fontSize="lg" fontWeight="500" color="white" justify="center"   _hover={{bg:"white", color:"#03064A" }}>
-            <Link to="/dashboard" 
+            <Link to="/dashboard/dash" 
             style={{
                width:"160px",
               }} >
@@ -42,9 +42,9 @@ const Sidebar = () => {
         </Flex>
         <Accordion allowMultiple>
   <AccordionItem >
-    <h2>
+    <h2 >
       <AccordionButton color="white" >
-        <Flex fontWeight="500" align="center" fontSize="lg" w="110px">
+        <Flex ml="35px" fontWeight="500" align="center" fontSize="lg" w="110px">
             <Icon mr="10px" as={HiOutlinePencil}   />
           Test
         </Flex>
@@ -52,7 +52,7 @@ const Sidebar = () => {
       </AccordionButton>
     </h2>
     <AccordionPanel p="5px 0 0 0"  fontWeight="500" fontSize="lg" bg="white" color="#03064A" justify="center" >
-                <Link  to="/test/completed" 
+                <Link  to="/dashboard/completed" 
             style={{
                width:"160px",
               
@@ -63,7 +63,7 @@ const Sidebar = () => {
             </Link>
     </AccordionPanel>
     <AccordionPanel pb="5px" fontWeight="500" fontSize="lg" bg="white" color="#03064A" justify="center" >
-                <Link to="/test/newtest" 
+                <Link to="/dashboard/newtest" 
             style={{
                width:"160px",
               }} >
