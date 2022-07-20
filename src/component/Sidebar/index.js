@@ -23,7 +23,7 @@ import logo from "../../asset/image/logo.png";
 
 const Sidebar = () => {
   return (
-    <Box h="100vh"  w={{base:"100%", md:"200px", lg:"300px"}}  pos="fixed">
+    <Box h="100vh"  w="15%" bg="#03064A"  pos="fixed">
       <Flex  justify="space-between" display={{base:"none", md:"block",}}  flexDirection="column" >
         <Box h="170px" w="100%"  >
           <Image    m="30px auto" w={{base:"0", md:"55%", lg:"65%"}} h={{base:"0", md:"35%", lg:"45%"}} src={logo} alt="logo"/>

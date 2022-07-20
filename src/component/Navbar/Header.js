@@ -13,7 +13,7 @@ import {AiOutlinePlus } from "react-icons/ai";
 const Header = () => {
   return (
     <Flex m="30px auto"  pb="8"  borderBottom="5px solid rgba(0, 0, 0, 0.1)">
-      <Flex pos="relative" >
+      <Flex  >
        <Image h="150px" w="150px" src={prof} alt="professor"/>
        <Button
           _hover={{

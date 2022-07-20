@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import Sidebar from "../../component/Sidebar/index"
+import Header from "../../component/Navbar/Header"
 import {
     Box,
     Button,
@@ -8,23 +10,25 @@ import {
    Text,
    Icon,
    Grid, 
-   GridItem, 
+   GridItem,
+   Center, 
   } from "@chakra-ui/react";
   import {AiOutlineCheckCircle } from "react-icons/ai";
   
 
 const Body = () => {
   return (
-    <Flex justifyContent="center">
-    <Grid
-    h='auto'
-    w="80%"
-    // templateRows='repeat(7, 1fr)'
-    templateColumns='repeat(6, 1fr)'
-    gap={4}
-  >
-     <GridItem  colSpan={6}  borderRadius="3px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"> 
-        <Flex textAlign="center" flexDirection="column">
+    <Box>
+      <Box w="15%">
+        <Sidebar/>
+      </Box>
+    <Flex  w="85%" ml="15%" direction="column">
+      <Box ml="50px"  >
+        <Header/>
+      </Box>
+    
+     <Center > 
+        <Flex w="80%"  borderRadius="3px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" textAlign="center" flexDirection="column">
         
           <Text mt="8" color="#03064A" fontWeight="600" lineHeight="48px" fontSize="32px">
             Test your python skill
@@ -47,18 +51,23 @@ const Body = () => {
           fontWeight="700"
           borderRadius="47px"
           width="130px"
-        m="30px auto"
-    colorScheme="#03064A"
-        >
+          m="30px auto"
+          colorScheme="#03064A"
+         >
           <Link to="/payment" 
             >
             Take Test
-             
+            
             </Link>
-        </Button>
-          </Flex>
-     </GridItem>
-    <GridItem colSpan={2} h="auto" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)">
+          </Button>
+        </Flex>
+     <Box>
+      
+     </Box>
+     </Center>
+
+   
+    {/* <Box  h="auto" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)">
       <Flex py="5px" flexDirection="column" justifyContent="center">
         <Text m="0 auto" color="#03064A" fontSize="24px" fontWeight="650">Recent Activities</Text>
         <Flex color="#03064A" fontWeight="700" fontSize="20px" m="0 auto" align="center">
@@ -69,8 +78,7 @@ const Body = () => {
         <Text pl="22px" m="0 auto" fontWeight="600" color="rgba(3, 6, 74, 0.6)">Date:30/06/2022</Text>
         <Text pr="4px" m="0 auto" fontWeight="600" color="rgba(3, 6, 74, 0.6)">Time:2:52pm</Text>
       </Flex>
-    </GridItem>
-    <GridItem  colSpan={2} h="auto"  borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"  >
+    </Box>
     <Flex h="100%"  m="auto" flexDirection="column"color="#03064A" fontWeight="700" fontSize="20px"  align="center">
       <Box m="auto" >
       <Flex  align="center">
@@ -80,8 +88,6 @@ const Body = () => {
       <Text fontSize="20px" pl="30px" fontWeight="610" color="rgba(3, 6, 74, 0.6)">100% complete</Text>
       </Box>
     </Flex>
-    </GridItem>
-    <GridItem px="5px" colSpan={2} h="auto" bg="#03064A"  borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)"  >
     <Flex justifyContent="center" h="100%" align="center"  flexDirection="column"color="#03064A" fontWeight="700" fontSize="20px" >
       <Box m="auto" >
       <Flex  align="center" color="white">
@@ -111,10 +117,11 @@ const Body = () => {
         </Flex>
       </Box>
     </Flex>
-    </GridItem>
-   
-  </Grid>
+   </Box> */}
+  
   </Flex>
+  </Box>
+
   )
 }
 

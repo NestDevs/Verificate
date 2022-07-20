@@ -16,29 +16,12 @@ import Signup from "./component/Signup";
 function App() {
   return (
     <Router>
-      <Grid h='100vh' templateRows='repeat(4, 1fr)' templateColumns='repeat(5, 1fr)' gap={6}>
-      <GridItem w={{base:"60px", md:"200px", lg:"300px"}} rowSpan={4} colSpan={1} bg='#03064A' >
-        <Sidebar/>
-      </GridItem>
-      <GridItem  colSpan={4} rowSpan={1} bg='white' >
-        <Header/>
-      </GridItem>
-      <GridItem colSpan={4} rowSpan={1} bg='white' >
       <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/signup" element={<Signup />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-          <Route exact path="/dashboard" element={<Dashboard/>}></Route> 
-          <Route exact path="/test/completed" element={<Completed/>}></Route> 
-          <Route exact path="/test/newtest" element={<Newtest/>}></Route> 
-          <Route exact path="/certificate" element={<Certificates/>}></Route> 
-          <Route exact path="/payment" element={<Payment/>}></Route> 
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
       </Routes>
-      </GridItem>
-    
-    </Grid>
     </Router>
-   
   );
 }
 
