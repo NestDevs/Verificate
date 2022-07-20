@@ -13,7 +13,8 @@ import {
    Input ,
    Stack
   } from "@chakra-ui/react";
-export const Payment = () => {
+  import { Link } from "react-router-dom";
+export const Info = () => {
   return (
     <Box w="100%" >
     <Flex mx="auto" mb="40px" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" w={{base:"90%", md:"80%", lg:"70%"}} textAlign="center" flexDirection="column">
@@ -46,11 +47,7 @@ export const Payment = () => {
         opacity: "0.9",
       }}
       >
-     <Link to="/dashboard/info" 
-        >
-        Pay Now
-        
-        </Link>
+    Start Test
    </Button>
       </Center>
       

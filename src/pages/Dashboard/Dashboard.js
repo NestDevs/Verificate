@@ -20,6 +20,7 @@ import { Dash } from '../../component/Dash';
 import { Completed } from '../Test/Completed/Completed';
 import { Newtest } from '../Test/New/Newtest';
 import { Payment } from '../Test/payment/Payment';
+import { Info } from '../Test/Info/Info';
   
 
 const Body = () => {
@@ -39,6 +40,7 @@ const Body = () => {
             <Route  path="/completed" element={ <Completed/> } />
             <Route path="/newtest" element={ <Newtest/> } />
             <Route path="/payment" element={ <Payment/> } />
+            <Route path="/info" element={ <Info/> } />
           </Routes>
         {/* </Router> */}
           
