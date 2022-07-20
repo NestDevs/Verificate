@@ -46,7 +46,11 @@ export const Payment = () => {
         opacity: "0.9",
       }}
       >
-    Pay Now
+     <Link to="/dashboard/info" 
+        >
+        Pay Now
+        
+        </Link>
    </Button>
       </Center>
       

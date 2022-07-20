@@ -13,6 +13,7 @@ import {
    Input ,
    Stack
   } from "@chakra-ui/react";
+  import { Link } from "react-router-dom";
 export const Info = () => {
   return (
     <Box w="100%" >
