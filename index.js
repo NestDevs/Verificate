@@ -1994,12 +1994,7 @@ function $4d8d9b8ecce9c945$export$e28cd9da9f3e7125(values) {
 
 
 
-
-var $00f029d70defe8c2$exports = {};
-$00f029d70defe8c2$exports = new URL("create-profile.8a795591.png", "file:" + __filename).toString();
-
-
-function $074e0c48f78ec406$var$index({ text: text , header: header , isOpen: isOpen , onClose: onClose  }) {
+function $ltMAx$chakrauireact.Modal({ isOpen: isOpen , onOpen: onOpen , onClose: onClose , title: title , children: children  }) {
     return /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$reactjsxruntime.Fragment), {
         children: /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Modal), {
             isOpen: isOpen,
@@ -2051,6 +2046,18 @@ function $074e0c48f78ec406$var$index({ text: text , header: header , isOpen: isO
                                         })
                                     })
                                 ]
+                            children: title
+                        }),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalCloseButton), {}),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalBody), {
+                            children: children
+                        }),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalFooter), {
+                            children: /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)(Button, {
+                                colorScheme: "blue",
+                                mr: 3,
+                                onClick: onClose,
+                                children: "Close"
                             })
                         })
                     ]
@@ -2059,10 +2066,10 @@ function $074e0c48f78ec406$var$index({ text: text , header: header , isOpen: isO
         })
     });
 }
-var $074e0c48f78ec406$export$2e2bcd8739ae039 = $074e0c48f78ec406$var$index;
+var $074e0c48f78ec406$export$2e2bcd8739ae039 = (0, $ltMAx$chakrauireact.Modal);
 
 
-function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail , modalMethod: modalMethod  }) {
+function $b0cc251b814421b8$export$2e2bcd8739ae039() {
     const initialState = {
         email: "",
         password: "",
@@ -2095,6 +2102,8 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail ,
             setUserEmail(email);
             setValues(initialState);
             modalMethod();
+            alert("submitted");
+            setIsSubmitted(true);
         }
     };
     return /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Flex), {
@@ -2212,14 +2221,6 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail ,
                                                         /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
                                                             value: "javascript",
                                                             children: "JavaScript"
-                                                        }),
-                                                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
-                                                            value: "javascript",
-                                                            children: "Solidity"
-                                                        }),
-                                                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
-                                                            value: "javascript",
-                                                            children: "React"
                                                         })
                                                     ]
                                                 }),
@@ -2240,13 +2241,17 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail ,
                                                     children: "Level"
                                                 }),
                                                 /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Select), {
-                                                    placeholder: "Beginner",
+                                                    placeholder: "Junior",
                                                     size: "md",
                                                     name: "level",
                                                     onChange: onChange,
                                                     value: level,
                                                     multiple: false,
                                                     children: [
+                                                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
+                                                            value: "junior",
+                                                            children: " Junior"
+                                                        }),
                                                         /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
                                                             value: "beginner",
                                                             children: "Beginner"
@@ -2257,7 +2262,7 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail ,
                                                         }),
                                                         /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)("option", {
                                                             value: "advance",
-                                                            children: "Advanced"
+                                                            children: "Advance"
                                                         })
                                                     ]
                                                 }),
@@ -2314,71 +2319,52 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039({ setUserEmail: setUserEmail ,
 }
 
 
-
 const $d1b449788daf87b5$var$index = ()=>{
-    const { isOpen: isOpen , onOpen: onOpen , onClose: onClose  } = (0, $ltMAx$chakrauireact.useDisclosure)();
-    const [isModalOpen, setIsModalOpen] = (0, $ltMAx$react.useState)(false);
-    const [userEmail, setUserEmail] = (0, $ltMAx$react.useState)("");
-    const modalMethod = ()=>{
-        setIsModalOpen(true);
-        return onOpen();
-    };
-    return /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Box), {
+    return /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Box), {
         w: "100vw",
         h: "100vh",
         bg: "#03064A",
-        children: [
-            /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Flex), {
-                flexDir: [
-                    "column",
-                    "row"
-                ],
-                align: "center",
-                justify: "center",
-                children: [
-                    /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Box), {
-                        w: [
-                            "100%",
-                            "45%"
-                        ],
-                        children: [
-                            /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Image), {
-                                src: (0, (/*@__PURE__*/$parcel$interopDefault($056ddd6f78dd1c05$exports))),
-                                alt: "logo",
-                                display: "block",
-                                height: "75px"
-                            }),
-                            /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Image), {
-                                src: (0, (/*@__PURE__*/$parcel$interopDefault($83a8d83281b1c4ef$exports))),
-                                alt: "areas of specialty",
-                                display: "block"
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Box), {
-                        w: [
-                            "100%",
-                            "55%"
-                        ],
-                        bg: "#ffffff",
-                        h: "100vh",
-                        children: [
-                            /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $095e421ce88fe1ec$export$2e2bcd8739ae039), {}),
-                            /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $b0cc251b814421b8$export$2e2bcd8739ae039), {
-                                modalMethod: modalMethod,
-                                setUserEmail: setUserEmail
-                            })
-                        ]
-                    })
-                ]
-            }),
-            isModalOpen && /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $074e0c48f78ec406$export$2e2bcd8739ae039), {
-                text: "You have successfully created an account",
-                header: userEmail,
-                isOpen: isOpen,
-                onClose: onClose
-            })
-        ]
+        children: /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Flex), {
+            flexDir: [
+                "column",
+                "row"
+            ],
+            align: "center",
+            justify: "center",
+            children: [
+                /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Box), {
+                    w: [
+                        "100%",
+                        "45%"
+                    ],
+                    children: [
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Image), {
+                            src: (0, (/*@__PURE__*/$parcel$interopDefault($056ddd6f78dd1c05$exports))),
+                            alt: "logo",
+                            display: "block",
+                            height: "75px"
+                        }),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Image), {
+                            src: (0, (/*@__PURE__*/$parcel$interopDefault($83a8d83281b1c4ef$exports))),
+                            alt: "areas of specialty",
+                            display: "block"
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Box), {
+                    w: [
+                        "100%",
+                        "55%"
+                    ],
+                    bg: "#ffffff",
+                    h: "100vh",
+                    children: [
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $095e421ce88fe1ec$export$2e2bcd8739ae039), {}),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $b0cc251b814421b8$export$2e2bcd8739ae039), {})
+                    ]
+                })
+            ]
+        })
     });
 };
 var $d1b449788daf87b5$export$2e2bcd8739ae039 = $d1b449788daf87b5$var$index;
@@ -2433,9 +2419,7 @@ const $99deb91d93177cc9$var$customeTheme = (0, $ltMAx$chakrauireact.extendTheme)
         xl: "1200px"
     }
 });
-const $99deb91d93177cc9$export$bca14c5b3b88a9c9 = (0, $ltMAx$chakrauireact.extendTheme)({
-    customeTheme: $99deb91d93177cc9$var$customeTheme
-});
+const $99deb91d93177cc9$export$bca14c5b3b88a9c9 = (0, $ltMAx$chakrauireact.extendTheme)({});
 
 
 function $4fa36e821943b400$var$getLibrary(provider, connector) {
