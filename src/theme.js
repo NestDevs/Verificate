@@ -22,4 +22,4 @@ const customeTheme = extendTheme({
   },
 });
 
-export const theme = extendTheme({});
+export const theme = extendTheme({ customeTheme });

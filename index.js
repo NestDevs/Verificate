@@ -2004,6 +2004,48 @@ function $ltMAx$chakrauireact.Modal({ isOpen: isOpen , onOpen: onOpen , onClose:
                 /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.ModalContent), {
                     children: [
                         /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalHeader), {
+                            justify: "center",
+                            children: header
+                        }),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalCloseButton), {}),
+                        /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalBody), {
+                            children: /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsxs)((0, $ltMAx$chakrauireact.Flex), {
+                                w: [
+                                    "90%",
+                                    "100%"
+                                ],
+                                h: "full",
+                                flexDir: "column",
+                                justify: "center",
+                                align: "center",
+                                children: [
+                                    /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Text), {
+                                        children: text
+                                    }),
+                                    /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Image), {
+                                        src: (0, (/*@__PURE__*/$parcel$interopDefault($00f029d70defe8c2$exports))),
+                                        alt: "account successfully created"
+                                    }),
+                                    /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.Link), {
+                                        display: "flex",
+                                        align: "center",
+                                        justify: "center",
+                                        fontWeight: "bold",
+                                        rounded: "full",
+                                        width: "120px",
+                                        bg: "#03064A",
+                                        color: "white",
+                                        size: "lg",
+                                        px: 5,
+                                        _hover: {
+                                            underline: "none"
+                                        },
+                                        children: /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$reactrouterdom.Link), {
+                                            to: "/dashboard",
+                                            children: "Proceed"
+                                        })
+                                    })
+                                ]
                             children: title
                         }),
                         /*#__PURE__*/ (0, $ltMAx$reactjsxruntime.jsx)((0, $ltMAx$chakrauireact.ModalCloseButton), {}),
@@ -2056,6 +2098,10 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039() {
             return true;
         } else {
             setIsLoading(true);
+            setIsSubmitted(true);
+            setUserEmail(email);
+            setValues(initialState);
+            modalMethod();
             alert("submitted");
             setIsSubmitted(true);
         }

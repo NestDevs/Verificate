@@ -25,7 +25,7 @@ import useForm from "./useForm";
 import { validateSignupInfo } from "./validateForm";
 import Modal from "../Modal";
 
-export default function SignupForm() {
+export default function SignupForm({ setUserEmail, modalMethod }) {
   const initialState = {
     email: "",
     password: "",
@@ -52,8 +52,11 @@ export default function SignupForm() {
       return true;
     } else {
       setIsLoading(true);
-      alert("submitted");
+
       setIsSubmitted(true);
+      setUserEmail(email);
+      setValues(initialState);
+      modalMethod();
     }
   };
 
@@ -132,6 +135,8 @@ export default function SignupForm() {
                     <option value="python"> Python</option>
                     <option value="php">PHP</option>
                     <option value="javascript">JavaScript</option>
+                    <option value="javascript">Solidity</option>
+                    <option value="javascript">React</option>
                   </Select>
                   {error.skill && (
                     <FormErrorMessage>{error.skill}</FormErrorMessage>
@@ -142,17 +147,16 @@ export default function SignupForm() {
                 <FormControl id="level" isRequired isInvalid={error.level}>
                   <FormLabel>Level</FormLabel>
                   <Select
-                    placeholder="Junior"
+                    placeholder="Beginner"
                     size="md"
                     name="level"
                     onChange={onChange}
                     value={level}
                     multiple={false}
                   >
-                    <option value="junior"> Junior</option>
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
-                    <option value="advance">Advance</option>
+                    <option value="advance">Advanced</option>
                   </Select>
                   {error.level && (
                     <FormErrorMessage>{error.level}</FormErrorMessage>
