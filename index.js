@@ -2084,7 +2084,6 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039() {
     const [showPassword1, setShowPassword] = (0, $ltMAx$react.useState)(false);
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log("Working");
         const values = {
             email: email,
             password: password,
@@ -2094,7 +2093,6 @@ function $b0cc251b814421b8$export$2e2bcd8739ae039() {
         setErrors((0, $4d8d9b8ecce9c945$export$e28cd9da9f3e7125)(values));
         console.log(error);
         if (Object.entries(error).length > 0) {
-            console.log(error);
             return true;
         } else {
             setIsLoading(true);

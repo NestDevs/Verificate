@@ -15,9 +15,11 @@ import {
   } from "@chakra-ui/react";
 // import { useWeb3 } from '../../../'
 import { useWeb3 } from '../../../hooks/Web3Client.hook'
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate, useLocation} from 'react-router-dom';
 
 export const Payment = () => {
+  const { state } = useLocation()
+console.log(state)
   const { address } = useWeb3()
 
   return (

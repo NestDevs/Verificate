@@ -6,7 +6,7 @@ import {
     Button,
   } from "@chakra-ui/react";
 import React , { useContext } from 'react'
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { useWeb3React } from '@web3-react/core'
 import {  Web3Address } from '../component/Web3Address'
 import {Web3Button} from '../component/Web3Button'
@@ -16,6 +16,8 @@ import AppContext from "../contexts/AppContext";
 
 export const Dash = () => {
   const { user } = useContext(AppContext);
+  const navigate = useNavigate();
+
   console.log({user})
 
   return (
@@ -46,11 +48,13 @@ export const Dash = () => {
       m="30px auto"
       colorScheme="#03064A"
      >
-      <Link to="/dashboard/payment" 
-        >
-        Take Test
-        
-        </Link>
+
+        <Button 
+        onClick={()=>{
+          navigate('/dashboard/newtest',
+          options= { replace: true, state: 'any' })
+        }}
+        >Take test</Button>
       </Button>
     </Flex>
  <Flex   h="fit-content" m="0 auto"  w="80%" mt="50px"  flexDirection={{base:"column", md:"row"}} align="center">

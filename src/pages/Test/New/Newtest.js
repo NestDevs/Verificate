@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React, {useState} from 'react'
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
@@ -26,6 +26,11 @@ const testName = [
  },
 ]
 export const Newtest = ({ name }) => {
+  const { state } = useLocation()
+  const navigate = useNavigate();
+
+  const [test, selectTest] = useState("")
+  console.log({state})
   return (
     <Box  w="100%" >
       <Flex mb="50px" mt="30px" mx="auto" borderRadius="8px" boxShadow="6px 4px 27px rgba(3, 6, 74, 0.25)" w={{base:"90%", md:"80%", lg:"70%"}} textAlign="center" flexDirection="column">
@@ -49,6 +54,11 @@ export const Newtest = ({ name }) => {
             border: "2px solid #03064A",
             
           }}
+
+          onClick={()=>{
+            selectTest(name)
+            console.log(test)
+          }}
           >
           {name}
         </Button>
@@ -67,12 +77,17 @@ export const Newtest = ({ name }) => {
           border: "1px solid primary",
           opacity: "0.9",
         }}
+        onClick={()=>{
+          navigate('/dashboard/payment',
+          options= { replace: true, state:{test} })
+        }}
         >
-       <Link to="/dashboard/payment" 
+       {/* <Link to="/dashboard/payment" 
             >
-            Take Test
+            // Take Test
              
-            </Link>
+            </Link> */}
+
       </Button>
         </Flex>
     </Box>
