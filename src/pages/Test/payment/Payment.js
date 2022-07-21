@@ -13,6 +13,7 @@ import {
    Input ,
    Stack
   } from "@chakra-ui/react";
+  import { Link } from "react-router-dom";
 export const Payment = () => {
   return (
     <Box w="100%" >
@@ -46,7 +47,7 @@ export const Payment = () => {
         opacity: "0.9",
       }}
       >
-     <Link to="/dashboard/info" 
+     <Link to="/dashboard/kickstart" 
         >
         Pay Now
         
